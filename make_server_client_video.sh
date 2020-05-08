@@ -1,0 +1,1 @@
+g++ server_client_video.cpp -o server_client_video -std=c++11 `pkg-config --cflags --libs opencv`
