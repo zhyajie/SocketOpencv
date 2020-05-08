@@ -1,16 +1,16 @@
-#include <stdio.h>
+
 #include <sys/socket.h>
 #include <sys/types.h>
-#include <stdlib.h>
-#include <string.h>
+
 #include <netinet/in.h>
 #include <errno.h>
 #include <arpa/inet.h>
 #include <unistd.h>
-#include "opencv2/opencv.hpp"
-#include "opencv2/highgui.hpp"
+#include <opencv2/core/core.hpp>  // NOLINT
+#include <opencv2/highgui/highgui.hpp>  // NOLINT
+#include <opencv2/imgproc/imgproc.hpp>  // NOLINT
 #include<sys/time.h>
-
+#include <iostream>
 #define MAXLINE 512
 
 void client()
@@ -35,11 +35,11 @@ void client()
 	inet_pton(AF_INET, servInetAddr, &sockaddr.sin_addr);
 	if ((connect(socketfd, (struct sockaddr*)&sockaddr, sizeof(sockaddr))) < 0)
 	{
-		printf("connect error %s errno: %d\n", strerror(errno), errno);
-		exit(0);
+		std::cout<<"connect error "<<strerror(errno)<<"errno: "<<errno<<std::endl;
+		return ;
 	}
 
-	printf("send message to server\n");
+	std::cout<<"send message to server"<<std::endl;
 
 	for(int n=0;n<100;n++){
 		//

@@ -1,16 +1,11 @@
-#include <stdio.h>
-#include<stdlib.h>
+
 #include <sys/socket.h>
-#include <sys/types.h>
-#include <string.h>
 #include <netinet/in.h>
-#include <stdlib.h>
-#include <errno.h>
 #include <unistd.h>
 #include <arpa/inet.h>
-#include "opencv2/opencv.hpp"
-#include "opencv2/highgui.hpp"
-
+#include <opencv2/core/core.hpp>  // NOLINT
+#include <opencv2/highgui/highgui.hpp>  // NOLINT
+#include <opencv2/imgproc/imgproc.hpp>  // NOLINT
 #include<sys/time.h>
 #include <iostream>
 #include <string>
